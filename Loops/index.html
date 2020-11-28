@@ -21,9 +21,13 @@
             const para = document.querySelector("p");
 
             for (let i = 0; i < cats.length; i++) {
-                info += cats[i] + ", ";
+                if (i === cats.length - 1) {
+                    info += 'and ' + cats[i] + '.';
+                } else {
+                    info += cats[i] + ', ';
+                }
             }
-
+            
             para.textContent = info;
         </script>
     </body>
