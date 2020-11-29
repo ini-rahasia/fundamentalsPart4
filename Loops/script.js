@@ -4,13 +4,13 @@ const para = document.querySelector('p');
 
 let i = 0;
 
-while (i < cats.length) {
-    if (i === cats.length -1) {
+do {
+    if (i === cats.length - 1) {
         info += 'and ' + cats[i] + '.';
     } else {
         info += cats[i] + ', ';
     }
-    i++;
-}
+    i++
+} while (i < cats.length);
 
 para.textContent = info;
