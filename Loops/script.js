@@ -1,26 +1,16 @@
-const contacts = [
-    'Chris:2232322', 
-    'Sarah:3453456', 
-    'Bill:7654322', 
-    'Mary:9998769', 
-    'Dianne:9384975'
-];
-
+const cats = ['Bill', 'Jeff', 'Pete', 'Biggles', 'Jasmin'];
+let info = 'My cats are called ';
 const para = document.querySelector('p');
-const input = document.querySelector('input');
-const btn = document.querySelector('button');
 
-btn.addEventListener('click', function() {
-    let num = input.value;
-    input.value = '';
-    input.focus();
+let i = 0;
 
-    for (let i = 1; i <= num; i++) {
-        let sqRoot = Math.sqrt(i);
-        if (Math.floor(sqRoot) !== sqRoot) {
-            continue;
-        }
-
-        para.textContent += i + ' ';
+while (i < cats.length) {
+    if (i === cats.length -1) {
+        info += 'and ' + cats[i] + '.';
+    } else {
+        info += cats[i] + ', ';
     }
-});
+    i++;
+}
+
+para.textContent = info;
