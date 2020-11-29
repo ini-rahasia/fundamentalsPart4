@@ -1,16 +1,14 @@
-const cats = ['Bill', 'Jeff', 'Pete', 'Biggles', 'Jasmin'];
-let info = 'My cats are called ';
-const para = document.querySelector('p');
+const output = document.querySelector('.output');
+output.innerHTML = '';
 
-let i = 0;
-
-do {
-    if (i === cats.length - 1) {
-        info += 'and ' + cats[i] + '.';
+for (let i = 10; i >= 0; i--) {
+    let para = document.createElement('p');
+    if (i === 10) {
+        para.textContent = `Countdown ${i}`;
+    } else if (i === 0) {
+        para.textContent = 'Blast off!';
     } else {
-        info += cats[i] + ', ';
+        para.textContent = i;
     }
-    i++
-} while (i < cats.length);
-
-para.textContent = info;
+    output.appendChild(para);
+}
