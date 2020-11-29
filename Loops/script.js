@@ -1,14 +1,28 @@
-const output = document.querySelector('.output');
-output.innerHTML = '';
+const people = [
+    'Chris', 
+    'Anne', 
+    'Colin', 
+    'Terri', 
+    'Phil', 
+    'Lola', 
+    'Sam', 
+    'Kay', 
+    'Bruce'
+];
 
-for (let i = 10; i >= 0; i--) {
-    let para = document.createElement('p');
-    if (i === 10) {
-        para.textContent = `Countdown ${i}`;
-    } else if (i === 0) {
-        para.textContent = 'Blast off!';
+const admitted = document.querySelector('.admitted');
+const refused = document.querySelector('.refused');
+
+admitted.textContent = 'Admit: ';
+refused.textContent = 'Refuse: ';
+
+for (let i = 0; i < people.length; i++) {
+    if (people[i] === 'Phil' || people[i] === 'Lola') {
+        refused.textContent += people[i] + ', ';
     } else {
-        para.textContent = i;
+        admitted.textContent += people[i] + ', ';
     }
-    output.appendChild(para);
 }
+
+refused.textContent = refused.textContent.slice(0, refused.textContent.length-2) + '.';
+admitted.textContent = admitted.textContent.slice(0, admitted.textContent.length-2) + '.';
